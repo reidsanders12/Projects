@@ -1,14 +1,26 @@
-/*Reid Sanders 
-**Java Recall
-**A simple Java program to recall some basic concepts in Java programming language.
-**Date: 09/09/2025
-*/
+/* Reid Sanders 
+ * Java Recall
+ * A simple Java program to recall some basic concepts in Java.
+ * Date: 09/09/2025
+ */
 
 import java.util.*;
 
-public class JavaRecall{
+public class JavaRecall {
+    private final String name;
+    private final int age;
 
-    public class Builder {
+    private JavaRecall(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Getters
+    public String getName() { return name; }
+    public int getAge() { return age; }
+
+    // Make Builder static so it can be used without an outer instance
+    public static class Builder {
         private String name;
         private int age;
 
@@ -27,66 +39,72 @@ public class JavaRecall{
         }
     }
 
-    public static void main(Stringp[] args){
-        System.out.prinln("Haven't coded in Java for a while, so let's see what I remember!");
+    public static void main(String[] args) {
+        System.out.println("Haven't coded in Java for a while, so let's see what I remember!");
 
-        //ArrayList reminder
+        // ArrayList reminder
         List<String> list = new ArrayList<>();
         list.add("This");
         list.add("is");
         list.add("a");
         list.add("test");
 
-        //For-each loop reminder
-        for(String s: list){
+        // For-each loop reminder
+        for (String s : list) {
             System.out.println(s);
         }
-        System.out.println(list.pop(2)); //Should remove the index at 2, which should be "a"
-        
+        // Remove element at index 2 ("a")
+        String removed = list.remove(2);
+        System.out.println("Removed: " + removed);
+
         System.out.println("------------------");
 
-        //HashMap reminder
+        // HashMap reminder
         Map<String, Integer> map = new HashMap<>();
-        //Remind myself that a hashmap is a key-value pair, first is the key, second is the value
+        // HashMap is key-value pairs: first is key, second is value
         map.put("One", 1);
         map.put("Two", 2);
         map.put("Three", 3);
-        //For-each loop to iterate through the map
-        for(String key: map.keySet()){
-            System.out.println("Key: " + key + ", Value: " + map.get(key));
+
+        // For-each loop to iterate through the map
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
         }
-        map.put("Bank Account number", 123456789); //Adding a fake bank account number to the map, to show it can be used for cybersecurity purposes
+        map.put("Bank Account number", 123456789); // fake example
         System.out.println("Bank Account number: " + map.get("Bank Account number"));
 
         System.out.println("------------------");
 
-        //2D Array reminder
+        // 2D Array reminder
         int[][] array2D = {
             {1, 2, 3},
             {4, 5, 6},
             {7, 8, 9}
         };
-        //Nested for loop to iterate through the 2D array
-        for(int i = 0; i < array2D.length; i++){
-            for(int j = 0; j < array2D[i].length; j++){ //Note the use of array2D[i].length to get the length of the specific row
+        // Nested for loop to iterate through the 2D array
+        for (int i = 0; i < array2D.length; i++) {
+            for (int j = 0; j < array2D[i].length; j++) {
                 System.out.print(array2D[i][j] + " ");
             }
-            System.out.println(); //New line after each row
+            System.out.println(); // New line after each row
         }
 
-
         System.out.println("------------------");
-        //Scanner reminder
+
+        // Scanner reminder
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your name: ");
-        String name = scanner.nextLine();
-        System.out.println("Hello, " + name + "!");
+        String inputName = scanner.nextLine();
+        System.out.println("Hello, " + inputName + "!");
+        scanner.close();
 
         System.out.println("------------------");
-        //Class and Object reminder
-        Building person = new Builder().setName("John").setAge(30).build();
+
+        // Class and Object reminder using Builder
+        JavaRecall person = new JavaRecall.Builder()
+                                .setName("John")
+                                .setAge(30)
+                                .build();
         System.out.println("Person Name: " + person.getName() + ", Age: " + person.getAge());
     }
 }
-
-
