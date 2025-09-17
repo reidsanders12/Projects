@@ -2,7 +2,7 @@
 
 Welcome! 👋  
 
-This is the repository where I keep a collection of projects, experiments, and ideas I've worked on **for fun**. These are from when I was **18 and older** — anything before this isn't here because, well… I didn’t know how to use Git back then. 😅  
+This is the repository where I keep a collection of projects, experiments, and ideas I've worked on **for fun**. These are from when I was **18 and older** — anything before this isn't here because, I didn’t know how to use Git back then. 
 
 Expect a mix of random coding experiments, side projects, and things I built while learning, exploring, and trying out new ideas. Nothing here is guaranteed to be polished or finished — it’s more like my personal sandbox.  
 
