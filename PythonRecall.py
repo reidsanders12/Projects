@@ -82,3 +82,11 @@ def factorial(n):
     else:
         return n * factorial(n - 1)
 print("Factorial of 5:", factorial(5))
+
+#list comprehension
+squared = [x**2 for x in e]
+print("Squared list:", squared)
+
+#lambda functions
+multiply = lambda x, y: x * y
+print("Multiplication using lambda:", multiply(5, 10))
